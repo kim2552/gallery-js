@@ -1,2 +1,3 @@
 npm install --save gatsby-source-strapi
 npm install react-slick
+npm install slick-carousel

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gallery App`,
-    description: `Galler app website.`,
+    title: `Memories`,
+    description: `Memory journal website.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
