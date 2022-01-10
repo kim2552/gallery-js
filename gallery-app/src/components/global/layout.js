@@ -13,10 +13,12 @@ import Header from "./header"
 import NavBar from "./nav-bar"
 import "./layout.css"
 
-import { isLoggedIn } from "../../services/auth"
+import useAuth from "../../hooks/useAuth"
 import feed_end_img from '../../images/end_of_feed.png'
 
 const Layout = ({ children }) => {
+  const { state, isAuthenticated } = useAuth()
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -40,7 +42,7 @@ const Layout = ({ children }) => {
         <NavBar />
         <br></br>
         <main style={{paddingTop: "3rem", backgroundColor: `#F0DCD3`}}>{children}</main>
-        {isLoggedIn() ? (
+        {isAuthenticated ? (
           <img style={{margin: 0}} src={feed_end_img} alt="End of Feed Image"></img>
         ) : (
           null

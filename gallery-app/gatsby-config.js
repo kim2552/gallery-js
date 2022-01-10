@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Memories`,
     description: `Memory journal website.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `@kimddev`,
+    siteUrl: `https://kimd.dev/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
