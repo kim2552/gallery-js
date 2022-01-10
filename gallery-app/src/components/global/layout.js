@@ -17,7 +17,7 @@ import useAuth from "../../hooks/useAuth"
 import feed_end_img from '../../images/end_of_feed.png'
 
 const Layout = ({ children }) => {
-  const { state, isAuthenticated } = useAuth()
+  const { isAuthenticated } = useAuth()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         <br></br>
         <main style={{paddingTop: "3rem", backgroundColor: `#F0DCD3`}}>{children}</main>
         {isAuthenticated ? (
-          <img style={{margin: 0}} src={feed_end_img} alt="End of Feed Image"></img>
+          <img style={{margin: 0}} src={feed_end_img} alt="End of Feed"></img>
         ) : (
           null
         )}

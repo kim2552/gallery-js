@@ -16,7 +16,7 @@ const PrivateRoute = ({ component: Component, location, authenticated, ...rest }
 }
 
 const App = ({location}) => {
-  const { state, isAuthenticated } = useAuth()
+  const { isAuthenticated } = useAuth()
   const redirect = location.pathname.split('/').pop()
   useEffect(() => {
     if (!isAuthenticated) {

@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import useAuth from '../hooks/useAuth'
 
 const Login = ({ redirect }) => {
-  const { state, login } = useAuth()
+  const { login } = useAuth()
   const [identifier, setIdentifier] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -23,9 +23,6 @@ const Login = ({ redirect }) => {
 
   return (
     <div className="w-full max-w-xs">
-      {/* <pre>
-        { JSON.stringify({ state }, null, 2)}
-      </pre> */}
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

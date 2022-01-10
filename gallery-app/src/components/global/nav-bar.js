@@ -1,5 +1,4 @@
 import React from "react"
-import { Link, navigate } from "gatsby"
 import useAuth from "../../hooks/useAuth"
 
 export default function NavBar() {
