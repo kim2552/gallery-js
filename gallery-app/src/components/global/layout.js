@@ -13,6 +13,9 @@ import Header from "./header"
 import NavBar from "./nav-bar"
 import "./layout.css"
 
+import { isLoggedIn } from "../../services/auth"
+import feed_end_img from '../../images/end_of_feed.png'
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -25,7 +28,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div style={{backgroundColor: `#F59A9A`}}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -36,11 +39,14 @@ const Layout = ({ children }) => {
       >
         <NavBar />
         <br></br>
-        <main>{children}</main>
-        <footer>
-        </footer>
+        <main style={{paddingTop: "3rem", backgroundColor: `#F0DCD3`}}>{children}</main>
+        {isLoggedIn() ? (
+          <img style={{margin: 0}} src={feed_end_img} alt="End of Feed Image"></img>
+        ) : (
+          null
+        )}
       </div>
-    </>
+    </div>
   )
 }
 

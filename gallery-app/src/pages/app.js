@@ -20,7 +20,7 @@ const PrivateRoute = ({ component: Component, location, ...rest }) => {
 const App = () => (
   <Layout>
     <Router>
-        <PrivateRoute path="/app/profile" component={Profile} />
+        <PrivateRoute path="/app/profile" component={Profile}/>
         <PrivateRoute path="/app/home" component={Feed}/>
         <Login path="/app/login" />
     </Router>

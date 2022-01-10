@@ -5,7 +5,7 @@ import { getUser, isLoggedIn, logout } from "../../services/auth"
 export default function NavBar() {
     let greetingMessage = ""
     if (isLoggedIn()) {
-      greetingMessage = `${getUser().name}`
+      greetingMessage = `Hi ${getUser().name}!`
     } else {
       greetingMessage = "You are not logged in"
     }
@@ -20,9 +20,13 @@ export default function NavBar() {
         >
             <span>{greetingMessage}</span>
             <nav>
-                <Link to="/">Home</Link>
-                {` `}
-                <Link to="/app/profile">Profile</Link>
+                {isLoggedIn() ? (
+                    <a
+                        href="http://localhost:1338/admin/plugins/content-manager/collectionType/application::article.article"
+                    >
+                        Add
+                    </a>
+                ) : null}
                 {` `}
                 {isLoggedIn() ? (
                     <a

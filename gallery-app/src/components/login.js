@@ -17,33 +17,35 @@ class Login extends React.Component {
   }
   render() {
     if (isLoggedIn()) {
-      navigate(`/app/profile`)
+      navigate(`/app/home`)
     }
     return (
-      <>
+      <div style={{ margin: `5rem`, paddingBottom: `5rem`}}>
         <h1>Log in</h1>
         <form
           method="post"
           onSubmit={event => {
             this.handleSubmit(event)
-            navigate(`/app/profile`)
+            navigate(`/app/home`)
           }}
         >
           <label>
             Username
             <input type="text" name="username" onChange={this.handleUpdate} />
           </label>
+          <br></br>
           <label>
-            Password
+            Password{'  '}
             <input
               type="password"
               name="password"
               onChange={this.handleUpdate}
             />
           </label>
+          <br></br>
           <input type="submit" value="Log In" />
         </form>
-      </>
+      </div>
     )
   }
 }
